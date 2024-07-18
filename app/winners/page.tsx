@@ -1,11 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import CarItem from '../component/Home/CarItem'
 import { Car, CarItemProps } from '../types/Car'
 import { countAllWinners, getCarId, getWinners } from '../api/api'
-import { getRandomColor, getRandomName } from '../utils/util'
 import WinnersCarItem from '../component/Winners/WinnersCarItem'
 
 export default function Home() {
@@ -14,13 +11,14 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const data = await getWinners(page, 10)
-      data.map(async (item) => {
-        const newData = await getCarId(item.id)
-        item.name = newData.name
-        item.color = newData.color
-      })
-      setData(data)
+      const winners = await getWinners(page, 10)
+      const updatedData = await Promise.all(
+        winners.map(async (item) => {
+          const newData = await getCarId(item.id)
+          return { ...item, name: newData.name, color: newData.color }
+        })
+      )
+      setData(updatedData)
     } catch (error) {
       console.error(error)
     }
