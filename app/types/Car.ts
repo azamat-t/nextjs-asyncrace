@@ -6,4 +6,6 @@ export interface Car {
 
 export interface CarItemProps {
   car: Car
+  removeCar: (id: number) => Promise<void>
+  editCar: (car: Car) => Promise<void>
 }

@@ -36,3 +36,19 @@ export const createCar = async (body: object) => {
     console.error(error)
   }
 }
+
+export const updateCar = async (body: object, id: number) => {
+  await fetch(`${garageUrl}/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+}
+
+export const deleteCar = async (id: number) => {
+  await fetch(`${garageUrl}/${id}`, {
+    method: 'DELETE',
+  })
+}
