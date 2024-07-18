@@ -2,8 +2,15 @@ import { CarItemProps } from '@/app/types/Car'
 import CarImg from '../CarImg'
 
 const CarItem = ({ car, removeCar, editCar }: CarItemProps) => {
+  const createSlideInLeftStyle = (duration) => ({
+    animation: `slide-in-left ${duration}s ease-in-out 0.25s 1 forwards`,
+  })
+
   return (
-    <div key={car.id} className='flex items-center'>
+    <div
+      key={car.id}
+      className='flex items-center border-b-2 border-gray-500 mb-2'
+    >
       <div className='flex flex-col'>
         <button
           type='button'
@@ -34,10 +41,19 @@ const CarItem = ({ car, removeCar, editCar }: CarItemProps) => {
           B
         </button>
       </div>
-      <CarImg color={car.color} />
-      <h5 className='text-2xl uppercase text-gray-700 '>
-        {car.id} {car.name}
-      </h5>
+      <div className='flex-1'>
+        <div>
+          <h5 className='text-xl uppercase text-gray-700'>
+            {car.id} {car.name}
+          </h5>
+        </div>
+        <div>
+          <div style={createSlideInLeftStyle(Math.floor(Math.random() * 10))}>
+            <CarImg color={car.color} />
+          </div>
+        </div>
+      </div>
+      <div className='w-24 h-24  border-l-8 border-gray-500 border-dotted'></div>
     </div>
   )
 }

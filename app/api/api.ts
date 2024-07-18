@@ -1,6 +1,7 @@
 export const baseUrl = 'http://127.0.0.1:3000'
 
 const garageUrl = `${baseUrl}/garage`
+const engineUrl = `${baseUrl}/engide`
 
 export let countAllCars = 0
 
@@ -51,4 +52,21 @@ export const deleteCar = async (id: number) => {
   await fetch(`${garageUrl}/${id}`, {
     method: 'DELETE',
   })
+}
+
+export const startMotorAPI = async (id: number) =>
+  (
+    await fetch(`${engineUrl}?id=${id}&status=started`, { method: 'PATCH' })
+  ).json()
+
+export const stopMotorAPI = async (id: number) =>
+  (
+    await fetch(`${engineUrl}?id=${id}&status=stopped`, { method: 'PATCH' })
+  ).json()
+
+export const driveMotorAPI = async (id: number) => {
+  const res = await fetch(`${engineUrl}?id=${id}&status=drive`, {
+    method: 'PATCH',
+  }).catch()
+  return res.status !== 200 ? { success: false } : { ...(await res.json()) }
 }
