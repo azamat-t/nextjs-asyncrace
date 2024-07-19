@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Async-race
 
-## Getting Started
+### **_Educational project from the course [The Rolling Scopes School JavaScript/Front-end](https://rs.school/js /)_**
 
-First, run the development server:
+**_Completed: July 2024_**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Description of the project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A simple game in which we can create cars, change their colors and names, and view different cars by pages. The animation of the race is implemented. The winners of the races are displayed on a separate page.  
+[Link to the task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/async-race.md)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Functionality:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Create, update, delete cars
+- Create 100 random cars in one click
+- Pagination of pages
+- Starting/stopping the car engine
+- Display of the race winners on a separate page
 
-## Learn More
+## Technology Stack:
 
-To learn more about Next.js, take a look at the following resources:
+- NEXTJS
+- REACT
+- TailwindCSS
+- TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installing and running the API (use node 14.x or higher):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Clone a repository:
 
-## Deploy on Vercel
+    https://github.com/mikhama/async-race-api.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Go to the folder:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    cd async-race-api
+
+Install dependencies:
+
+    npm install
+
+Launch the API:
+
+    npm start
+
+## Installation and launch of the project:
+
+Clone a repository:
+
+    https://github.com/azamat-t/nextjs-asyncrace
+
+Install dependencies:
+
+    npm install
+
+Launch a project:
+
+    npm run dev
+
+## Screenshots:
+
+<details><summary><b>Expand</b></summary>
+
+[![async](https://user-images.githubusercontent.com/85887443/150778094-ac6f9439-bcec-46f4-81f4-367d48cfede2.png)]()
+
+[![async](https://user-images.githubusercontent.com/85887443/150778110-2e386f3f-1533-449f-902c-952f8a8a3359.png)]()
+
+</details>
+
+## Link to the website:
+
+https://github.com/azamat-t/nextjs-asyncrace
+
+## Link to the repository with API:
+
+https://github.com/mikhama/async-race-api

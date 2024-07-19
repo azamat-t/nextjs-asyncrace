@@ -3,9 +3,9 @@ import CarImg from '../CarImg'
 import { startMotorAPI, stopMotorAPI } from '@/app/api/api'
 
 const CarItem = ({ car, removeCar, editCar }: CarItemProps) => {
-  const createSlideInLeftStyle = (duration) => ({
-    animation: `slide-in-left ${duration}s ease-in-out 0.25s 1 forwards`,
-  })
+  // const createSlideInLeftStyle = (duration) => ({
+  //   animation: `slide-in-left ${duration}s ease-in-out 0.25s 1 forwards`,
+  // })
 
   const startCar = async (id: number) => {
     try {
@@ -65,7 +65,7 @@ const CarItem = ({ car, removeCar, editCar }: CarItemProps) => {
         <div>
           <div
             className=' translate-x-9'
-            style={createSlideInLeftStyle(Math.floor(Math.random() * 10))}
+            // style={createSlideInLeftStyle(Math.floor(Math.random() * 10))}
           >
             <CarImg color={car.color} />
           </div>
