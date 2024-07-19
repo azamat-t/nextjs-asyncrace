@@ -10,6 +10,8 @@ import {
   createCar,
   deleteCar,
   getCars,
+  startMotorAPI,
+  stopMotorAPI,
   updateCar,
 } from './api/api'
 import { getRandomColor, getRandomName } from './utils/util'
@@ -78,11 +80,24 @@ export default function Home() {
     } catch (error) {}
   }
 
+  const startRaceCars = async (page: number) => {
+    getCars(page, 10).then((cars: Car[]) =>
+      cars.forEach((elem) => startMotorAPI(elem.id))
+    )
+  }
+
+  const stopRaceCars = async (page: number) => {
+    getCars(page, 10).then((arrCars: Car[]) => {
+      arrCars.forEach((elem) => stopMotorAPI(elem.id))
+    })
+  }
+
   return (
     <main className='flex min-h-screen flex-col p-24'>
       <div className='w-full flex justify-between mb-5'>
         <button
           type='button'
+          onClick={() => startRaceCars(page)}
           className='flex text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900'
         >
           RACE
@@ -97,6 +112,7 @@ export default function Home() {
         </button>
         <button
           type='button'
+          onClick={() => stopRaceCars(page)}
           className='flex text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900'
         >
           RESET

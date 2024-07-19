@@ -1,7 +1,7 @@
 export const baseUrl = 'http://127.0.0.1:3000'
 
 const garageUrl = `${baseUrl}/garage`
-const engineUrl = `${baseUrl}/engide`
+const engineUrl = `${baseUrl}/engine`
 const winnersUrl = `${baseUrl}/winners`
 
 export let countAllCars = 0
@@ -103,4 +103,33 @@ export const getWinners = async (page: number = 0, limit = 10) => {
   } catch (error) {
     console.error(error)
   }
+}
+
+export const getWinnerAPI = async (id: number) =>
+  (await fetch(`${winnersUrl}/${id}`, { method: 'GET' })).json()
+
+export const createWinnerAPI = async (body: object) => {
+  await fetch(winnersUrl, {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+}
+
+export const deleteWinnerAPI = async (id: number) => {
+  await fetch(`${winnersUrl}/${id}`, {
+    method: 'DELETE',
+  })
+}
+
+export const updateWinnerAPI = async (body: object, id: number) => {
+  await fetch(`${winnersUrl}/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 }
