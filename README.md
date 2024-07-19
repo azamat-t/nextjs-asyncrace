@@ -60,9 +60,9 @@ Launch a project:
 
 <details><summary><b>Expand</b></summary>
 
-[![async](https://user-images.githubusercontent.com/85887443/150778094-ac6f9439-bcec-46f4-81f4-367d48cfede2.png)]()
+[![async](https://github.com/azamat-t/nextjs-asyncrace/blob/master/Screenshot%202024-07-19%20at%2008.52.17.png)]()
 
-[![async](https://user-images.githubusercontent.com/85887443/150778110-2e386f3f-1533-449f-902c-952f8a8a3359.png)]()
+[![async](https://github.com/azamat-t/nextjs-asyncrace/blob/master/Screenshot%202024-07-19%20at%2008.52.25.png)]()
 
 </details>
 
