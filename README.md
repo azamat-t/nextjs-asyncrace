@@ -68,7 +68,7 @@ Launch a project:
 
 ## Link to the website:
 
-https://github.com/azamat-t/nextjs-asyncrace
+https://nextjs-asyncrace-8v7p.vercel.app
 
 ## Link to the repository with API:
 
